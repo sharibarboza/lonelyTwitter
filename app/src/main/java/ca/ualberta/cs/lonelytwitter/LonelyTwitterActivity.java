@@ -44,21 +44,32 @@ public class LonelyTwitterActivity extends Activity {
 		Button saveButton = (Button) findViewById(R.id.save);
 		oldTweetsList = (ListView) findViewById(R.id.oldTweetsList);
 
+		Button clearButton = (Button) findViewById(R.id.clear);
+
 		saveButton.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
 				setResult(RESULT_OK);
 				String text = bodyText.getText().toString();
 
-				NormalTweet newTweet = new NormalTweet("Hello");
+				NormalTweet newTweet = new NormalTweet(text);
 
 				tweetList.add(newTweet);
-
 				adapter.notifyDataSetChanged();
 
 				saveInFile();
 				//finish();
 
+			}
+		});
+
+		clearButton.setOnClickListener(new View.OnClickListener() {
+
+			public void onClick(View v) {
+
+				tweetList.clear();
+				deleteFile("file.sav");
+				adapter.notifyDataSetChanged();
 			}
 		});
 	}
