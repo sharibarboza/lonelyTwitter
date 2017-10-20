@@ -45,7 +45,6 @@ public class LonelyTwitterActivityTest extends ActivityInstrumentationTestCase2<
 
         solo.enterText((EditText) solo.getView(R.id.body), "Test Tweet!");
         solo.clickOnButton("Save");
-        solo.enterText((EditText) solo.getView(R.id.body), "");
         solo.waitForText("Test Tweet!");
 
         solo.clickInList(0);
