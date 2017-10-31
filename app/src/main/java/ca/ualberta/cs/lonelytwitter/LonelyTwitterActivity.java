@@ -9,10 +9,10 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Date;
+
+// Delete unneccesary/unused import
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -26,7 +26,8 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 public class LonelyTwitterActivity extends Activity {
-	private LonelyTwitterActivity activity = this;
+	// Make declaration to have a final modifier
+	final private LonelyTwitterActivity activity = this;
 	private static final String FILENAME = "file.sav";
 	private EditText bodyText;
 	private ListView oldTweetsList;
@@ -38,10 +39,11 @@ public class LonelyTwitterActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
-		bodyText = (EditText) findViewById(R.id.body);
-		Button saveButton = (Button) findViewById(R.id.save);
-		Button clearButton = (Button) findViewById(R.id.clear);
-		oldTweetsList = (ListView) findViewById(R.id.oldTweetsList);
+		// Remove redundant casting
+		bodyText = findViewById(R.id.body);
+		Button saveButton = findViewById(R.id.save);
+		Button clearButton = findViewById(R.id.clear);
+		oldTweetsList = findViewById(R.id.oldTweetsList);
 
 		saveButton.setOnClickListener(new View.OnClickListener() {
 

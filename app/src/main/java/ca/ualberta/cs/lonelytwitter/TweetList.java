@@ -3,14 +3,16 @@ package ca.ualberta.cs.lonelytwitter;
 import java.util.ArrayList;
 
 public class TweetList {
-    private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
+    // Make declaration to have a final modifier
+    final private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
 
     public TweetList(){
 
     }
 
-    public Tweet getTweet(int index){
-        return tweets.get(index);
+    public Tweet getTweet(){
+        // Actual value of parameter "index" is always "0"
+        return tweets.get(0);
     }
 
     public boolean hasTweet(Tweet tweet){
